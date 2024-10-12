@@ -1,6 +1,4 @@
 .smod-ux-card {
-    background-color: yellow;
-    border: 1px solid orange;
     width: 200px;
     height: 300px;
     overflow: hidden;
@@ -11,6 +9,22 @@
     gap: 0.3rem;
     display: flex;
     flex-direction: column;
+    transition: box-shadow 0.3s ease;
+    box-shadow: 0px 3px 5px -3px rgba(0,0,0,0.1);
+    
+}
+
+.smod-ux-card-active {
+    cursor: pointer ;
+}
+
+.smod-ux-card-inactive {
+    cursor: not-allowed ;
+    border:2px solid gray;
+}
+
+.smod-ux-card:hover{
+    box-shadow: 0px 10px 15px -3px rgba(0,0,0,0.1);
 }
 
 .smod-ux-card-container {
@@ -25,7 +39,6 @@
     text-align: center;
     border-bottom: 1px solid rgb(red, green, blue);
     background-color: white;
-
 }
 
 .smod-ux-card-description {

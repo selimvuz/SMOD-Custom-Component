@@ -14,7 +14,19 @@ function (Control) {
                 description: {
                     type:"string",
                     bindable: true,
+                },
+                imageSrc:{
+                    type:"string",
+                    bindable: true,
+                },
+                enabled:{
+                    type: "boolean",
+                    bindable: true,
+                    defaultValue: true
                 }
+            },
+            events:{
+                
             }
         },
         init: function () {
@@ -24,11 +36,14 @@ function (Control) {
         renderer: function(oRM, oControl) {
             oRM.openStart("div", oControl)
                 .class("smod-ux-card")
+                .class(oControl.getEnabled() ? "smod-ux-card-active" : "smod-ux-card-inactive" )
                 .openEnd()
 
                 //Image
+                //<img src="" data-key="" 
                 .openStart("img")
-                .attr("src", "https://www.w3schools.com/howto/img_avatar.png")
+                .attr("src", oControl.getImageSrc())
+                .attr("alt", oControl.getTitle())
                 .openEnd()
                 .close("img")
 
@@ -47,6 +62,21 @@ function (Control) {
                 .close("div")
 
                 .close("div");
+        },
+        ontap:function(oEvent){
+            oEvent.preventDefault();
+            if(!this.getEnabled()){
+                return;
+            }
+
+            // this.getParent()?.fireClick ? this.getParent().fireClick({
+            //     clickedItem: this
+            // }) : null;
+
+            const oEventBus = sap.ui.getCore().getEventBus();
+            oEventBus.publish("Card", "Click", {
+                clickedItem: this
+            });
         }
         
     });

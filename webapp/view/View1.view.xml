@@ -1,13 +1,37 @@
-<mvc:View controllerName="com.smod.ux.customcontrol.controller.View1"
-    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+<mvc:View
+    controllerName="com.smod.ux.customcontrol.controller.View1"
+    xmlns:mvc="sap.ui.core.mvc"
+    displayBlock="true"
     xmlns="sap.m"
-    xmlns:custom="com.smod.ux.customcontrol.custom">
-    <Page id="page" title="{i18n>title}">
+    xmlns:l="sap.ui.layout"
+    xmlns:custom="com.smod.ux.customcontrol.custom"
+>
+    <Page
+        id="page"
+        title="{i18n>title}"
+    >
         <content>
-            <custom:CardContainer>
-                <custom:Card busy="false" title="Yavuz Selim" description="Açıklama 1"/>
-                <custom:Card busy="false" title="Tunahan Kır" description="Açıklama 2"/>
-                <custom:Card busy="false" title="Bayram Dabak" description="Açıklama 3"/>
+            <custom:CardContainer click=".onCardClick" defaultSpan="XL2 L2 M4 S6">
+                <custom:Card
+                    busy="false"
+                    title="Yavuz Selim"
+                    description="Açıklama 1"
+                    imageSrc="https://www.w3schools.com/howto/img_avatar.png"
+                />
+                <custom:Card
+                    busy="false"
+                    title="Ayşe Kırma"
+                    description="Açıklama 2"
+                    imageSrc="https://www.w3schools.com/howto/img_avatar2.png"
+                    enabled="true"
+                />
+                <custom:Card
+                    busy="false"
+                    title="Tunahan Kır"
+                    description="Açıklama 2"
+                    imageSrc="https://www.w3schools.com/howto/img_avatar.png"
+                    enabled="true"
+                />
             </custom:CardContainer>
         </content>
     </Page>
