@@ -1,0 +1,14 @@
+<mvc:View controllerName="com.smod.ux.customcontrol.controller.View1"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m"
+    xmlns:custom="com.smod.ux.customcontrol.custom">
+    <Page id="page" title="{i18n>title}">
+        <content>
+            <custom:CardContainer>
+                <custom:Card busy="false" title="Yavuz Selim" description="Açıklama 1"/>
+                <custom:Card busy="false" title="Tunahan Kır" description="Açıklama 2"/>
+                <custom:Card busy="false" title="Bayram Dabak" description="Açıklama 3"/>
+            </custom:CardContainer>
+        </content>
+    </Page>
+</mvc:View>
